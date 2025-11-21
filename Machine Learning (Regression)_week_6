@@ -1,0 +1,11 @@
+Concept: Scikit-Learn, Features (X) vs Target (y), Linear Regression.
+
+The Scenario: A Real Estate agent in Nyeri wants to estimate house rent based on the size of the house.
+
+The Project: "The Rent Predictor."
+
+    Dataset: Columns: Square_Feet, Number_of_Rooms, Rent_Price.
+
+    Task: Split data into Train/Test. Train a Linear Regression model.
+
+    Deliverable: A script where you type in "3 rooms" and it predicts "Ksh 15,000.
