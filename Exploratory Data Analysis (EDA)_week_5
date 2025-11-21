@@ -1,0 +1,11 @@
+# Concept: Correlation (Heatmaps), GroupBy, pivot tables.
+
+The Scenario: An M-Pesa agent wants to know which day of the week has the highest transaction volume.
+
+The Project: "M-Pesa Transaction Insights."
+
+    Dataset: A log of 1,000 transactions including Time, Amount, Type (Send/Withdraw).
+
+    Task: Group data by "Day of Week." Calculate total transaction volume per day. Visualize it.
+
+    Deliverable: A 1-page report (Markdown in Notebook) answering: "When should the agent hold the most cash?"
