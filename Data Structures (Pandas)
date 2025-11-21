@@ -1,0 +1,11 @@
+# Concept: Loading CSVs, DataFrames, Selecting Columns, Basic Math.
+
+The Scenario: The University Registrar has a messy Excel sheet of student marks and needs to know the average performance.
+
+The Project: "The KCSE Analyzer."
+
+    Dataset: Create a dummy CSV with columns: Student_Name, Math, English, Kiswahili.
+
+    Task: Load the CSV. Create a new column called Average_Score. Filter to show only students who scored above 50.
+
+    Deliverable: A Jupyter Notebook that outputs the "Top 10 Students."
