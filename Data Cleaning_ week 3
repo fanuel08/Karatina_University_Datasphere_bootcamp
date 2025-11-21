@@ -1,0 +1,11 @@
+# Concept: Handling NaN (empty values), Duplicates, String formatting.
+
+The Scenario: A Nairobi shopkeeper recorded sales manually. Some prices have "Ksh" text mixed with numbers, and some days are missing.
+
+The Project: "The Messy Shopkeeper."
+
+    Dataset: A CSV with dirty data (e.g., Price: "1000", "1000ksh", "Zero", NaN).
+
+    Task: Write code to strip the "ksh," convert text to numbers, fill missing values with the average, and remove duplicates.
+
+    Deliverable: Export a clean clean_sales_data.csv file.
