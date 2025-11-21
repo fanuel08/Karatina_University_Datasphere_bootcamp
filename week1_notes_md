@@ -1,0 +1,174 @@
+
+# 🐍 Week 1: The Logic Foundation
+
+**Topic:** Variables, Functions, Lists, & Control Flow
+**Goal:** Build a reusable **Sacco Loan Calculator** that manages loans for multiple members.
+
+---
+
+## 📚 Part 1: The Toolkit (Key Concepts)
+
+Before we build the app, we need to understand the tools.
+
+
+### 1. Variables (The Containers)
+Variables store data. In Python, the type is determined automatically.
+
+```python code
+name = "Wanjiku"       # String (Text)
+savings = 5000         # Integer (Whole Number)
+rate = 12.5            # Float (Decimal)
+is_active = True       # Boolean (Yes/No)
+
+
+
+### 2. Functions (Reusable Logic)
+
+Instead of repeating code, we wrap logic in a function using def.
+Python
+
+def add_interest(amount):
+    # Adds 10% interest
+    return amount * 1.10
+
+# Using the function
+total = add_interest(1000) 
+
+3. Lists (Storing Multiple Items)
+
+A list allows us to store a collection of items.
+
+#code
+approved_members = ["Kamau", "Otieno"]
+
+# Adding a new item
+approved_members.append("Alice")
+
+
+
+### 4. Loops (Repetition)
+
+We use while loops to keep a program running until the user wants to stop.
+
+# code
+running = True
+while running:
+    print("System is ON...")
+    # The loop continues until 'running' becomes False
+
+###
+🏆 Part 2: The Project — Sacco Loan System
+
+The Scenario: A local Sacco needs a digital system to process loan applications. The system must run continuously, allowing the teller to process member after member without restarting the program.
+
+The Business Rules:
+
+    Eligibility: A member cannot borrow more than 3 times their current savings.
+
+    Interest: The Sacco charges a flat 15% interest on all approved loans.
+
+    Records: The system must keep a list of names for everyone who gets approved.
+
+💻 The Solution Code
+
+Create a file named sacco_system.py and paste this code to run the project.
+
+#code
+"""
+Project: Karatina Sacco Loan Calculator
+Concepts: Functions, Lists, While Loops, Input/Output
+"""
+
+# --- 1. DEFINE OUR LOGIC (FUNCTIONS) ---
+
+def check_eligibility(savings_amount, loan_amount):
+    """
+    Rule: You cannot borrow more than 3x your savings.
+    Returns: True if eligible, False if not.
+    """
+    limit = savings_amount * 3
+    if loan_amount <= limit:
+        return True
+    else:
+        return False
+
+def calculate_repayment(loan_amount):
+    """
+    Rule: Add 15% Interest to the loan.
+    """
+    interest = loan_amount * 0.15
+    return loan_amount + interest
+
+# --- 2. THE MAIN SYSTEM LOOP ---
+
+def main():
+    print("--- 🏦 KARATINA SACCO DIGITAL SYSTEM 🏦 ---")
+    
+    # List to store names of people who get approved
+    approved_list = []
+    
+    system_running = True
+
+    while system_running:
+        print("\n--- NEW APPLICATION ---")
+        
+        # Get Inputs (and convert strings to integers)
+        try:
+            name = input("Enter Member Name: ")
+            savings = int(input("Enter Current Savings (Ksh): "))
+            request = int(input("Enter Loan Request (Ksh): "))
+        except ValueError:
+            print("❌ Error: Please enter valid numbers for savings and loan.")
+            continue # Skips to the start of the loop
+
+        # Step A: Check Eligibility
+        if check_eligibility(savings, request):
+            
+            # Step B: Calculate Repayment
+            total_due = calculate_repayment(request)
+            
+            print(f"✅ APPROVED! Congratulations {name}.")
+            print(f"💰 Amount Disbursed: Ksh {request}")
+            print(f"📅 Total to Repay (with 15% interest): Ksh {int(total_due)}")
+            
+            # Step C: Add to records
+            approved_list.append(name)
+            
+        else:
+            print("❌ REJECTED.")
+            print(f"Reason: You can only borrow up to Ksh {savings * 3}.")
+
+        # Step D: Ask to continue
+        choice = input("\nProcess another member? (y/n): ")
+        if choice.lower() == 'n':
+            system_running = False
+
+    # --- 3. END OF SESSION REPORT ---
+    print("\n" + "="*30)
+    print(f"📊 SESSION CLOSED")
+    print(f"Total Loans Approved: {len(approved_list)}")
+    if len(approved_list) > 0:
+        print("Approved Members:")
+        for member in approved_list:
+            print(f"- {member}")
+    print("="*30)
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+##🚀 Part 3: Homework Challenge
+
+"The VIP Upgrade"
+
+Modify the code above to include a VIP Rule:
+
+    Ask the user: "Are you a VIP member? (yes/no)"
+
+    If they are VIP, they can borrow 5 times their savings.
+
+    If they are Regular, they stay at 3x their savings.
+
+Tip: You will need to update the check_eligibility function to accept a third argument!
