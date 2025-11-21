@@ -1,0 +1,9 @@
+# Concept: Streamlit (Turning Python scripts into Web Apps).
+
+The Scenario: The model from Week 6 is useless if it just lives in code. We need an interface for the agent.
+
+The Project: "The Live Price Estimator App."
+
+    Task: Wrap the Week 6 model in a Streamlit app. Add sliders for "Number of Rooms."
+
+    Deliverable: A running web link (on localhost) where you can adjust sliders and see the predicted price change instantly.
