@@ -1,0 +1,11 @@
+# Concept: Matplotlib & Seaborn (Bar charts, Line graphs, Scatter plots).
+
+The Scenario: The Ministry of Agriculture wants to see rainfall patterns vs. Maize prices.
+
+The Project: "Crop vs. Climate Dashboard."
+
+    Dataset: Monthly rainfall data vs. Maize prices (Mock data).
+
+    Task: Create a Line graph showing rainfall over time. Create a Scatter plot showing the relationship between rain and price.
+
+    Deliverable: A notebook with 3 distinct, colorful graphs with titles and labels.
